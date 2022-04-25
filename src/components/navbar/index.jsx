@@ -7,6 +7,12 @@ import {
   MDBCollapse,
   MDBNavItem,
   MDBNavLink,
+  MDBLink,
+  MDBDropdown,
+  MDBDropdownToggle,
+  MDBDropdownMenu,
+  MDBDropdownItem,
+  MDBIcon,
 } from "mdbreact";
 
 class NavigationBar extends Component {
@@ -40,10 +46,10 @@ class NavigationBar extends Component {
 
     return (
       <>
-        <MDBNavbar color="indigo" dark expand="md" fixed="top" scrolling>
+        <MDBNavbar color="white" light expand="md" fixed="top" scrolling>
           <MDBNavbarBrand href="/" className="py-0 font-weight-bold">
             {/* <Logo style={{ height: "2.5rem", width: "2.5rem" }} /> */}
-            <strong className="align-middle">MDB React</strong>
+            <strong className="align-middle">EzMoney</strong>
           </MDBNavbarBrand>
           <MDBNavbarToggler
             onClick={this.toggleCollapse("mainNavbarCollapse")}
@@ -53,9 +59,42 @@ class NavigationBar extends Component {
             isOpen={this.state.collapseID}
             navbar
           >
+            <MDBNavbarNav left>
+              {this.props.leftLink?.map((link, index) => (
+                <MDBNavItem key={`navigationLeft-key-${index}`}>
+                  {link.dropdown ? (
+                    <MDBDropdown size="sm">
+                      <MDBDropdownToggle
+                        color="transparent"
+                        className="z-depth-0 px-2 m-0"
+                        style={{ fontSize: "15px" }}
+                      >
+                        <strong>{link.name}</strong>
+                        <MDBIcon icon="caret-down" className="ml-2" />
+                      </MDBDropdownToggle>
+                      <MDBDropdownMenu basic>
+                        {link.child.map((item, index) => (
+                          <MDBDropdownItem key={`${link.name}-${index}`}>
+                            {item}
+                          </MDBDropdownItem>
+                        ))}
+                      </MDBDropdownMenu>
+                    </MDBDropdown>
+                  ) : (
+                    <MDBLink
+                      to={`#${link.path}`}
+                      onClick={this.closeCollapse("mainNavbarCollapse")}
+                      style={{ fontSize: "15px" }}
+                    >
+                      <strong>{link.name}</strong>
+                    </MDBLink>
+                  )}
+                </MDBNavItem>
+              ))}
+            </MDBNavbarNav>
             <MDBNavbarNav right>
-              {this.props.links?.map((link, index) => (
-                <MDBNavItem key={`navigationBar-key-${index}`}>
+              {this.props.rightLink?.map((link, index) => (
+                <MDBNavItem key={`navigationRight-key-${index}`}>
                   <MDBNavLink
                     exact
                     to={`/${link.path}`}

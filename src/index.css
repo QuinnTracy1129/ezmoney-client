@@ -5,8 +5,77 @@
   justify-content: space-between;
 }
 
+@font-face {
+  font-family: "Header Title";
+  src: url(./assets/font/angela.otf);
+}
+
+.title-font {
+  font-family: Header Title;
+  -webkit-text-stroke: 3px black;
+  color: white;
+}
+
 .cursor-pointer {
   cursor: pointer;
+}
+
+.trans-all {
+  transition: all 1s;
+}
+
+@media (min-width: 1200px) {
+  .bigW-90 {
+    width: 90%;
+  }
+  .header-dl {
+    width: 350px;
+  }
+  .header-icon {
+    font-size: 35px;
+  }
+  .title-font {
+    font-size: 7.5vw;
+  }
+  .flexible-height {
+    height: 100vh;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .bigW-90 {
+    width: 100%;
+  }
+  .header-dl {
+    width: 30vw;
+  }
+  .header-icon {
+    font-size: 30px;
+  }
+  .title-font {
+    font-size: 10vw;
+  }
+  .flexible-height {
+    height: fit-content;
+  }
+}
+
+@media (max-width: 550px) {
+  .bigW-90 {
+    width: 100%;
+  }
+  .header-dl {
+    width: 50%;
+  }
+  .header-icon {
+    font-size: 20px;
+  }
+  .title-font {
+    font-size: 12.5vw;
+  }
+  .flexible-height {
+    height: fit-content;
+  }
 }
 
 ::-webkit-scrollbar {

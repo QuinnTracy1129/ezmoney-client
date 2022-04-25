@@ -7,7 +7,7 @@ class App extends Component {
     return (
       <Router>
         <div className="flyout">
-          <main style={{ marginTop: "4rem" }}>
+          <main>
             <Routes />
           </main>
         </div>
