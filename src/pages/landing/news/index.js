@@ -27,7 +27,7 @@ const LandingNews = () => {
               src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%282%29.jpg"
               waves
             />
-            <MDBCardBody cascade className="text-center highligh-body">
+            <MDBCardBody cascade className="text-center highlight-body">
               <MDBCardTitle>MDBCard title</MDBCardTitle>
               <MDBCardText>
                 Some quick example text to build on the card title and make up

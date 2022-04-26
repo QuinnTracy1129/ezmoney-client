@@ -14,9 +14,15 @@ import "./index.css";
 
 const LandingCharacters = () => {
   const [activeIndex, setActiveIndex] = useState(2);
+  const [maxWidth, setMaxWidth] = useState(true);
 
   useEffect(() => {
     setActiveIndex(Math.floor(Math.random() * Characters.length));
+    if (window.innerWidth <= 500) {
+      setMaxWidth(false);
+    } else {
+      setMaxWidth(true);
+    }
   }, []);
 
   const handlePagination = action => {
@@ -37,38 +43,42 @@ const LandingCharacters = () => {
       className="flexible-height landing-character-bg"
     >
       <Title text="Characters" />
-      <MDBRow style={{ height: "75vh" }} className="text-white pb-3">
-        <MDBCol
-          className={
-            Characters[activeIndex - 2]
-              ? "d-flex align-items-center"
-              : "offset-2"
-          }
-          size={Characters[activeIndex - 2] ? "2" : "0"}
-        >
-          {Characters[activeIndex - 2] && (
-            <MDBView
-              onClick={() =>
-                Characters[activeIndex - 2] && setActiveIndex(activeIndex - 2)
-              }
-              className="character-preview cursor-pointer"
-            >
-              <img
-                src={Characters[activeIndex - 2].image}
-                className="img-fluid z-depth-4"
-                alt="First slide"
-              />
-              <MDBMask overlay="black-strong" />
-            </MDBView>
-          )}
-        </MDBCol>
+      <MDBRow className="text-white characters-carousel pb-3">
+        {maxWidth && (
+          <MDBCol
+            className={
+              Characters[activeIndex - 2]
+                ? "d-flex align-items-center"
+                : "offset-2"
+            }
+            size={Characters[activeIndex - 2] ? "2" : "0"}
+          >
+            {Characters[activeIndex - 2] && (
+              <MDBView
+                onClick={() =>
+                  Characters[activeIndex - 2] && setActiveIndex(activeIndex - 2)
+                }
+                className="character-preview cursor-pointer"
+              >
+                <img
+                  src={Characters[activeIndex - 2].image}
+                  className="img-fluid z-depth-4"
+                  alt="First slide"
+                />
+                <MDBMask overlay="black-strong" />
+              </MDBView>
+            )}
+          </MDBCol>
+        )}
         <MDBCol
           className={
             Characters[activeIndex - 1]
               ? "d-flex align-items-center"
-              : "offset-2"
+              : maxWidth
+              ? "offset-2"
+              : "offset-3"
           }
-          size={Characters[activeIndex - 1] ? "2" : "0"}
+          size={Characters[activeIndex - 1] ? (maxWidth ? "2" : "3") : "0"}
         >
           {Characters[activeIndex - 1] && (
             <MDBView
@@ -87,7 +97,7 @@ const LandingCharacters = () => {
           )}
         </MDBCol>
         <MDBCol
-          size="4"
+          size={maxWidth ? "4" : "6"}
           className="d-flex align-items-center h-100 position-relative"
         >
           <img
@@ -103,7 +113,11 @@ const LandingCharacters = () => {
             >
               <MDBIcon icon="angle-double-left" />
             </MDBBtn>
-            <MDBBtn color="light" className="rounded-pill bigW-50 py-3">
+            <MDBBtn
+              size={maxWidth ? "" : "sm"}
+              color="light"
+              className={`rounded-pill bigW-50 py-${maxWidth ? "3" : "2"}`}
+            >
               {Characters[activeIndex].label}
             </MDBBtn>
             <MDBBtn
@@ -116,7 +130,10 @@ const LandingCharacters = () => {
           </MDBContainer>
         </MDBCol>
         {Characters[activeIndex + 1] && (
-          <MDBCol className="d-flex align-items-center" size="2">
+          <MDBCol
+            className="d-flex align-items-center"
+            size={maxWidth ? "2" : "3"}
+          >
             <MDBView
               onClick={() => setActiveIndex(activeIndex + 1)}
               className="character-preview cursor-pointer"
@@ -130,7 +147,7 @@ const LandingCharacters = () => {
             </MDBView>
           </MDBCol>
         )}
-        {Characters[activeIndex + 2] && (
+        {maxWidth && Characters[activeIndex + 2] && (
           <MDBCol className="d-flex align-items-center" size="2">
             <MDBView
               onClick={() => setActiveIndex(activeIndex + 2)}

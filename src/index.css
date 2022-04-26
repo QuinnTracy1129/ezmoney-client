@@ -55,7 +55,10 @@ html {
 }
 
 @media (min-width: 1200px) {
-  .highligh-body {
+  .characters-carousel {
+    height: 65vh;
+  }
+  .highlight-body {
     padding-bottom: 5%;
   }
   .news-card {
