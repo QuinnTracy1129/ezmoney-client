@@ -25,7 +25,7 @@ const LandingNews = () => {
         return (
           <MDBContainer
             key={`active-news-${index}`}
-            className="news-highlight px-0 overflow-hidden rounded-circle d-flex align-items-center z-depth-3 border"
+            className="news-highlight px-0 overflow-hidden rounded-circle d-flex align-items-center border"
           >
             <img height="100%" width="auto" src={item.image} alt="Highlight" />
           </MDBContainer>
@@ -57,7 +57,7 @@ const LandingNews = () => {
       <Title text="News" />
       <MDBRow>
         <MDBCol lg="6" className="py-2">
-          <MDBContainer className="news-highlight rounded-circle d-flex align-items-center px-0 position-relative">
+          <MDBContainer className="news-highlight rounded-circle z-depth-3 d-flex align-items-center px-0 position-relative">
             {handleMapping()}
           </MDBContainer>
         </MDBCol>

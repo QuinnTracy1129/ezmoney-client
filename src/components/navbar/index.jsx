@@ -82,7 +82,7 @@ class NavigationBar extends Component {
               {this.props.leftLink?.map((link, index) => (
                 <MDBNavItem
                   key={`navigationLeft-key-${index}`}
-                  className="mx-2"
+                  className="mx-2 p-3"
                 >
                   {link.dropdown ? (
                     <MDBDropdown size="sm">
@@ -132,6 +132,7 @@ class NavigationBar extends Component {
                     exact
                     to={`/${link.path}`}
                     onClick={this.closeCollapse("mainNavbarCollapse")}
+                    className="bg-transparent"
                   >
                     <strong>
                       {link.name} {link.icon && <MDBIcon icon={link.icon} />}

@@ -37,7 +37,6 @@ html {
 
 .title-font {
   font-family: Header Title;
-  -webkit-text-stroke: 3px black;
   color: white;
 }
 
@@ -133,7 +132,8 @@ html {
     font-size: 35px;
   }
   .title-font {
-    font-size: 7.5vw;
+    font-size: 5.5vw;
+    -webkit-text-stroke: 3px black;
   }
   .flexible-height {
     height: 100vh;
@@ -196,7 +196,8 @@ html {
     font-size: 30px;
   }
   .title-font {
-    font-size: 10vw;
+    font-size: 5vw;
+    -webkit-text-stroke: 1px black;
   }
   .flexible-height {
     height: fit-content;
@@ -250,9 +251,6 @@ html {
   }
   .header-icon {
     font-size: 20px;
-  }
-  .title-font {
-    font-size: 12.5vw;
   }
   .flexible-height {
     height: fit-content;

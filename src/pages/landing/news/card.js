@@ -4,18 +4,33 @@ import {
   MDBBadge,
   MDBBtn,
   MDBAnimation,
+  MDBRow,
+  MDBCol,
+  MDBIcon,
 } from "mdbreact";
 
 const Card = ({ item }) => {
   return (
-    <MDBAnimation type="fadeIn">
+    <MDBAnimation type="zoomInDown">
       <MDBContainer fluid>
-        <MDBTypography tag="h1" variant="h1-responsive">
-          {item.title}
-        </MDBTypography>
-        <MDBBadge color="dark" className="px-3 py-1">
-          June 2022
-        </MDBBadge>
+        <MDBRow>
+          <MDBCol size="1" className="d-flex align-items-center">
+            <MDBIcon icon="newspaper" size="3x" />
+          </MDBCol>
+          <MDBCol>
+            <MDBTypography
+              tag="h1"
+              variant="h1-responsive"
+              className="font-weight-bold"
+            >
+              {item.title}
+            </MDBTypography>
+            <MDBBadge color="dark" className="px-3 py-1">
+              June 2022
+            </MDBBadge>
+          </MDBCol>
+        </MDBRow>
+
         <MDBTypography className="mt-3">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad

@@ -42,7 +42,7 @@ const LandingCharacters = () => {
       fluid
       className="flexible-height landing-character-bg"
     >
-      <Title text="Characters" />
+      <Title text="Characters" arrows={false} />
       <MDBRow className="text-white characters-carousel pb-3">
         {maxWidth && (
           <MDBCol
