@@ -19,7 +19,7 @@ const LandingNews = () => {
       <Title text="News" />
       <MDBRow>
         <MDBCol lg="6" className="py-2">
-          <MDBCard reverse className="bigW-90 mx-auto">
+          <MDBCard reverse className="news-card mx-auto">
             <MDBCardImage
               zoom
               cascade
@@ -27,7 +27,7 @@ const LandingNews = () => {
               src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%282%29.jpg"
               waves
             />
-            <MDBCardBody cascade className="text-center">
+            <MDBCardBody cascade className="text-center pb-5 mb-5">
               <MDBCardTitle>MDBCard title</MDBCardTitle>
               <MDBCardText>
                 Some quick example text to build on the card title and make up
@@ -39,10 +39,12 @@ const LandingNews = () => {
             </MDBCardBody>
           </MDBCard>
         </MDBCol>
-        <MDBCol lg="6" className="py-2">
-          {[null, null, null].map((item, index) => (
-            <NewsCard key={`news-${index}`} />
-          ))}
+        <MDBCol lg="6" className="py-2 news-card">
+          <MDBRow>
+            {[null, null, null].map((item, index) => (
+              <NewsCard key={`news-${index}`} />
+            ))}
+          </MDBRow>
         </MDBCol>
       </MDBRow>
     </MDBContainer>

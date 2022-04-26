@@ -1,5 +1,5 @@
 .landing-header-bg {
-  height: fit-content;
+  overflow: hidden;
   position: relative;
 }
 

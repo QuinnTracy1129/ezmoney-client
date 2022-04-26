@@ -41,6 +41,15 @@ html {
 }
 
 @media (min-width: 1200px) {
+  .gamemode-active {
+    font-size: 60px;
+  }
+  .gamemode-card {
+    height: 65vh;
+  }
+  .bigW-15 {
+    width: 15%;
+  }
   .bigW-90 {
     width: 90%;
   }
@@ -59,6 +68,15 @@ html {
 }
 
 @media (max-width: 1199.98px) {
+  .gamemode-active {
+    font-size: 40px;
+  }
+  .gamemode-card {
+    height: 25vh;
+  }
+  .sm-none {
+    display: none;
+  }
   .bigW-90 {
     width: 100%;
   }
@@ -80,6 +98,15 @@ html {
 }
 
 @media (max-width: 550px) {
+  .gamemode-active {
+    font-size: 30px;
+  }
+  .gamemode-card {
+    height: 20vh;
+  }
+  .sm-none {
+    display: none;
+  }
   .bigW-90 {
     width: 100%;
   }

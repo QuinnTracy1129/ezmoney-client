@@ -12,7 +12,7 @@ const LandingModes = () => {
   return (
     <MDBContainer id="game" fluid className="flexible-height">
       <Title text="Game Modes" />
-      <MDBRow>
+      <MDBRow className="pb-5">
         {Header.map((item, index) => (
           <GamemodeCard
             didClick={didClick}

@@ -4,3 +4,7 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.character-preview {
+  border-radius: 10% 0 10% 0;
+}

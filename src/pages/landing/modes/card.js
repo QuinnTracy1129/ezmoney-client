@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { MDBCol, MDBContainer } from "mdbreact";
+import { MDBCol, MDBContainer, MDBMask } from "mdbreact";
 
 const labels = ["PLAY", "JUETENG", "SCRATCH", "RIPA"];
 
@@ -21,11 +21,11 @@ const GamemodeCard = ({
       }}
       onMouseOver={() => setOverlay(false)}
       onMouseOut={() => setOverlay(true)}
-      className="gamemode-card bg-danger z-depth-5 cursor-pointer px-0"
+      className="gamemode-card z-depth-3 cursor-pointer px-0"
       style={{
         backgroundImage: `url(${item})`,
       }}
-      md={didClick ? (activeIndex === index ? "9" : "1") : "3"}
+      size={didClick ? (activeIndex === index ? "9" : "1") : "3"}
     >
       {didClick ? (
         activeIndex === index ? (

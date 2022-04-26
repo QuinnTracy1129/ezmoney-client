@@ -25,12 +25,11 @@ const LandingHeader = () => {
         time = 0;
         setActiveIndex(0);
       }
-      console.log(time);
     }, 5000);
   }, []);
 
   return (
-    <MDBContainer className="landing-header-bg px-0" fluid>
+    <MDBContainer className="landing-header-bg flexible-height px-0" fluid>
       <img src={Header[activeIndex]} className="img-fluid w-100" />
 
       <MDBContainer fluid className="header-dots text-center">
