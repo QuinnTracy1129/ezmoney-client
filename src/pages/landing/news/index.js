@@ -69,7 +69,7 @@ const LandingNews = () => {
                 tabId={index}
                 role="tabpanel"
               >
-                <Card item={item} />
+                <Card item={item} index={index} />
               </MDBTabPane>
             ))}
           </MDBTabContent>

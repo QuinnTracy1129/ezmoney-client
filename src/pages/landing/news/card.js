@@ -9,13 +9,17 @@ import {
   MDBIcon,
 } from "mdbreact";
 
-const Card = ({ item }) => {
+const Card = ({ item, index }) => {
   return (
     <MDBAnimation type="zoomInDown">
       <MDBContainer fluid>
         <MDBRow>
           <MDBCol size="2" className="d-flex align-items-center">
-            <MDBIcon icon="newspaper" size="3x" className="mx-auto" />
+            <MDBIcon
+              icon={index === 0 ? "star" : "newspaper"}
+              size="3x"
+              className={`${index === 0 && "text-warning"} mx-auto`}
+            />
           </MDBCol>
           <MDBCol>
             <MDBTypography
