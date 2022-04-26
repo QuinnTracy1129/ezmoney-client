@@ -1,48 +1,78 @@
+import { useState } from "react";
 import {
   MDBCol,
   MDBContainer,
   MDBRow,
-  MDBCard,
-  MDBCardImage,
-  MDBCardBody,
-  MDBCardTitle,
-  MDBCardText,
   MDBBtn,
+  MDBTypography,
+  MDBBadge,
+  MDBTabContent,
+  MDBTabPane,
 } from "mdbreact";
 import Title from "../../../components/title";
-import NewsCard from "./card";
+import News from "../../../fakeDb/news";
 import "./index.css";
+import Card from "./card";
 
 const LandingNews = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const handleMapping = () => {
+    let cssIndex = -1;
+
+    return News.map((item, index) => {
+      if (activeIndex === index) {
+        return (
+          <MDBContainer
+            key={`active-news-${index}`}
+            className="news-highlight px-0 overflow-hidden rounded-circle d-flex align-items-center z-depth-3 border"
+          >
+            <img height="100%" width="auto" src={item.image} alt="Highlight" />
+          </MDBContainer>
+        );
+      } else {
+        cssIndex += 1;
+        return (
+          <MDBContainer
+            key={`active-news-${index}`}
+            onClick={() => setActiveIndex(index)}
+            className={`news-dot news-${
+              cssIndex + 1
+            } bg-primary rounded-circle px-0 overflow-hidden z-depth-3 border`}
+          >
+            <img
+              height="100%"
+              width="auto"
+              className="cursor-pointer"
+              src={item.image}
+              alt="Highlight"
+            />
+          </MDBContainer>
+        );
+      }
+    });
+  };
   return (
     <MDBContainer id="news" fluid className="flexible-height">
       <Title text="News" />
       <MDBRow>
         <MDBCol lg="6" className="py-2">
-          <MDBCard reverse className="news-card mx-auto">
-            <MDBCardImage
-              zoom
-              cascade
-              className="w-100"
-              src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%282%29.jpg"
-              waves
-            />
-            <MDBCardBody cascade className="text-center highlight-body">
-              <MDBCardTitle>MDBCard title</MDBCardTitle>
-              <MDBCardText>
-                Some quick example text to build on the card title and make up
-                the bulk of the card&apos;s content.
-              </MDBCardText>
-              <MDBBtn href="#" size="sm" color="warning">
-                Learn more
-              </MDBBtn>
-            </MDBCardBody>
-          </MDBCard>
+          <MDBContainer className="news-highlight rounded-circle d-flex align-items-center px-0 position-relative">
+            {handleMapping()}
+          </MDBContainer>
         </MDBCol>
-        <MDBCol lg="6" className="py-2 news-card">
-          {[null, null, null].map((item, index) => (
-            <NewsCard key={`news-${index}`} />
-          ))}
+        <MDBCol lg="6" className="py-2 d-flex align-items-center">
+          <MDBTabContent activeItem={activeIndex}>
+            {News.map((item, index) => (
+              <MDBTabPane
+                key={`news-content-${index}`}
+                tabId={index}
+                role="tabpanel"
+              >
+                <Card item={item} />
+              </MDBTabPane>
+            ))}
+          </MDBTabContent>
         </MDBCol>
       </MDBRow>
     </MDBContainer>

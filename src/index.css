@@ -55,6 +55,33 @@ html {
 }
 
 @media (min-width: 1200px) {
+  .news-highlight {
+    height: 60vh;
+    width: 60vh;
+  }
+
+  .news-1 {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+  }
+
+  .news-2 {
+    position: absolute;
+    left: -7.5%;
+  }
+
+  .news-3 {
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+  }
+
+  .news-dot {
+    width: 100px;
+    height: 100px;
+  }
+
   .characters-carousel {
     height: 65vh;
   }
@@ -92,6 +119,33 @@ html {
 }
 
 @media (max-width: 1199.98px) {
+  .news-highlight {
+    height: 50vh;
+    width: 50vh;
+  }
+
+  .news-1 {
+    position: absolute;
+    top: 7.5%;
+    left: 0%;
+  }
+
+  .news-2 {
+    position: absolute;
+    left: -12.5%;
+  }
+
+  .news-3 {
+    position: absolute;
+    bottom: 7.5%;
+    left: 0%;
+  }
+
+  .news-dot {
+    width: 75px;
+    height: 75px;
+  }
+
   .gamemode-active {
     font-size: 40px;
   }
@@ -122,6 +176,33 @@ html {
 }
 
 @media (max-width: 550px) {
+  .news-highlight {
+    height: 60vw;
+    width: 60vw;
+  }
+
+  .news-1 {
+    position: absolute;
+    top: 7.5%;
+    left: 2.5%;
+  }
+
+  .news-2 {
+    position: absolute;
+    left: -12.5%;
+  }
+
+  .news-3 {
+    position: absolute;
+    bottom: 7.5%;
+    left: 2.5%;
+  }
+
+  .news-dot {
+    width: 50px;
+    height: 50px;
+  }
+
   .gamemode-active {
     font-size: 30px;
   }

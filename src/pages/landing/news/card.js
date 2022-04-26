@@ -1,44 +1,38 @@
 import {
-  MDBRow,
-  MDBCol,
+  MDBContainer,
   MDBTypography,
   MDBBadge,
   MDBBtn,
-  MDBView,
+  MDBAnimation,
 } from "mdbreact";
 
-const NewsCard = () => {
+const Card = ({ item }) => {
   return (
-    <MDBRow className="border my-3 z-depth-1 mx-1 rounded">
-      <MDBCol md="4" className="d-flex align-items-center px-0">
-        <MDBView hover zoom waves cascade>
-          <img
-            className="img-fluid"
-            src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%282%29.jpg"
-          />
-        </MDBView>
-      </MDBCol>
-      <MDBCol md="8">
-        <MDBTypography tag="h1" variant="h1-responsive" className="mb-0">
-          Game title
+    <MDBAnimation type="fadeIn">
+      <MDBContainer fluid>
+        <MDBTypography tag="h1" variant="h1-responsive">
+          {item.title}
         </MDBTypography>
-        <MDBBadge color="dark" className="py-2 px-3">
+        <MDBBadge color="dark" className="px-3 py-1">
           June 2022
         </MDBBadge>
-        <MDBTypography className="mb-0 my-2">
+        <MDBTypography className="mt-3">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
         </MDBTypography>
         <div className="text-center">
-          <MDBBtn color="warning" size="sm">
+          <MDBBtn size="sm" color="warning">
             Read more
           </MDBBtn>
         </div>
-      </MDBCol>
-    </MDBRow>
+      </MDBContainer>
+    </MDBAnimation>
   );
 };
 
-export default NewsCard;
+export default Card;
