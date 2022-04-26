@@ -14,8 +14,8 @@ const Card = ({ item }) => {
     <MDBAnimation type="zoomInDown">
       <MDBContainer fluid>
         <MDBRow>
-          <MDBCol size="1" className="d-flex align-items-center">
-            <MDBIcon icon="newspaper" size="3x" />
+          <MDBCol size="2" className="d-flex align-items-center">
+            <MDBIcon icon="newspaper" size="3x" className="mx-auto" />
           </MDBCol>
           <MDBCol>
             <MDBTypography
