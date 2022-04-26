@@ -50,12 +50,14 @@ class LandingPage extends React.Component {
 
     const rightLink = [
       {
-        name: "Others",
-        path: "others",
+        name: "Login",
+        icon: "user-circle",
+        path: "",
       },
       {
-        name: "Login",
-        path: "home",
+        name: "Download",
+        color: "warning",
+        path: "",
       },
     ];
     return (

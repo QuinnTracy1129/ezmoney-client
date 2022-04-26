@@ -7,7 +7,6 @@ import {
   MDBCollapse,
   MDBNavItem,
   MDBNavLink,
-  MDBLink,
   MDBDropdown,
   MDBDropdownToggle,
   MDBDropdownMenu,
@@ -15,11 +14,23 @@ import {
   MDBIcon,
   MDBBtn,
 } from "mdbreact";
+import { ReactComponent as Logo } from "../../assets/image/logo.svg";
 
 class NavigationBar extends Component {
   state = {
     collapseID: "",
+    fontSize: "1vw",
   };
+
+  componentDidMount() {
+    if (window.innerWidth >= 1200) {
+      this.setState({ fontSize: "1vw" });
+    } else if (window.innerWidth >= 550) {
+      this.setState({ fontSize: "17.5px" });
+    } else {
+      this.setState({ fontSize: "20px" });
+    }
+  }
 
   toggleCollapse = collapseID => () =>
     this.setState(prevState => ({
@@ -47,10 +58,16 @@ class NavigationBar extends Component {
 
     return (
       <>
-        <MDBNavbar color="white" light expand="md" fixed="top" scrolling>
-          <MDBNavbarBrand href="/" className="py-0 font-weight-bold">
-            {/* <Logo style={{ height: "2.5rem", width: "2.5rem" }} /> */}
-            <strong className="align-middle">EzMoney</strong>
+        <MDBNavbar
+          color="white"
+          light
+          expand="md"
+          fixed="top"
+          scrolling
+          className="mt-2 p-0"
+        >
+          <MDBNavbarBrand className="py-0 position-relative logo-width">
+            <Logo className="logo-width logo-icon" />
           </MDBNavbarBrand>
           <MDBNavbarToggler
             onClick={this.toggleCollapse("mainNavbarCollapse")}
@@ -58,18 +75,22 @@ class NavigationBar extends Component {
           <MDBCollapse
             id="mainNavbarCollapse"
             isOpen={this.state.collapseID}
+            className="navbar-buttons"
             navbar
           >
-            <MDBNavbarNav left>
+            <MDBNavbarNav left className="text-center">
               {this.props.leftLink?.map((link, index) => (
-                <MDBNavItem key={`navigationLeft-key-${index}`}>
+                <MDBNavItem
+                  key={`navigationLeft-key-${index}`}
+                  className="mx-2"
+                >
                   {link.dropdown ? (
                     <MDBDropdown size="sm">
                       <MDBDropdownToggle
                         href={`#${link.path}`}
                         color="transparent"
                         className="z-depth-0 px-2 m-0"
-                        style={{ fontSize: "15px" }}
+                        style={{ fontSize: this.state.fontSize }}
                       >
                         <strong>{link.name}</strong>
                         <MDBIcon icon="caret-down" className="ml-2" />
@@ -89,7 +110,7 @@ class NavigationBar extends Component {
                       className="z-depth-0 px-2 m-0"
                       href={`#${link.path}`}
                       onClick={this.closeCollapse("mainNavbarCollapse")}
-                      style={{ fontSize: "15px" }}
+                      style={{ fontSize: this.state.fontSize }}
                     >
                       <strong>{link.name}</strong>
                     </MDBBtn>
@@ -97,15 +118,24 @@ class NavigationBar extends Component {
                 </MDBNavItem>
               ))}
             </MDBNavbarNav>
-            <MDBNavbarNav right>
+            <MDBNavbarNav
+              right
+              style={{ fontSize: this.state.fontSize }}
+              className="text-center"
+            >
               {this.props.rightLink?.map((link, index) => (
-                <MDBNavItem key={`navigationRight-key-${index}`}>
+                <MDBNavItem
+                  key={`navigationRight-key-${index}`}
+                  className={`bg-${link.color} p-3`}
+                >
                   <MDBNavLink
                     exact
                     to={`/${link.path}`}
                     onClick={this.closeCollapse("mainNavbarCollapse")}
                   >
-                    <strong>{link.name}</strong>
+                    <strong>
+                      {link.name} {link.icon && <MDBIcon icon={link.icon} />}
+                    </strong>
                   </MDBNavLink>
                 </MDBNavItem>
               ))}

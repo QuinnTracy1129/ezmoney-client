@@ -18,7 +18,7 @@ const LandingCharacters = () => {
 
   useEffect(() => {
     setActiveIndex(Math.floor(Math.random() * Characters.length));
-    if (window.innerWidth <= 500) {
+    if (window.innerWidth <= 700) {
       setMaxWidth(false);
     } else {
       setMaxWidth(true);

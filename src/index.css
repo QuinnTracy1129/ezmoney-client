@@ -22,6 +22,15 @@ html {
   src: url(./assets/font/angela.otf);
 }
 
+@font-face {
+  font-family: "Navbar Title";
+  src: url(./assets/font/Walleye-Bold.ttf);
+}
+
+.navbar-buttons {
+  font-family: Navbar Title;
+}
+
 .display-2 {
   font-family: Header Title;
 }
@@ -54,7 +63,20 @@ html {
   }
 }
 
+.logo-icon {
+  height: auto;
+  position: absolute;
+}
+
 @media (min-width: 1200px) {
+  .logo-icon {
+    top: -35px;
+    left: 0;
+  }
+  .logo-width {
+    width: 25rem;
+  }
+
   .news-highlight {
     height: 60vh;
     width: 60vh;
@@ -119,6 +141,15 @@ html {
 }
 
 @media (max-width: 1199.98px) {
+  .logo-icon {
+    top: -25px;
+    left: 0;
+  }
+
+  .logo-width {
+    width: 30vw;
+  }
+
   .news-highlight {
     height: 50vh;
     width: 50vh;
@@ -176,6 +207,10 @@ html {
 }
 
 @media (max-width: 550px) {
+  .logo-width {
+    width: 12.5rem;
+  }
+
   .news-highlight {
     height: 60vw;
     width: 60vw;
@@ -183,7 +218,7 @@ html {
 
   .news-1 {
     position: absolute;
-    top: 7.5%;
+    top: 5%;
     left: 2.5%;
   }
 
@@ -194,13 +229,8 @@ html {
 
   .news-3 {
     position: absolute;
-    bottom: 7.5%;
+    bottom: 5%;
     left: 2.5%;
-  }
-
-  .news-dot {
-    width: 50px;
-    height: 50px;
   }
 
   .gamemode-active {
