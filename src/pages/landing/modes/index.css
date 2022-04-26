@@ -1,0 +1,37 @@
+.gamemode-card {
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: cover;
+  height: 750px;
+  position: relative;
+  overflow: hidden;
+  transition: all 1s;
+}
+
+.box-overlay {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.gamemode-label {
+  font-family: Header Title;
+  text-align: center;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  left: 0;
+  width: 100%;
+  position: absolute;
+  transition: all 0.5s;
+  font-size: 40px;
+}
+
+.gamemode-active {
+  font-family: Header Title;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  text-align: center;
+  font-size: 80px;
+}

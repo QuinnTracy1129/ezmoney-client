@@ -19,6 +19,7 @@ import Footer from "../../components/footer";
 import LandingHeader from "./header";
 import LandingNews from "./news";
 import LandingCharacters from "./characters";
+import LandingModes from "./modes";
 
 class LandingPage extends React.Component {
   render() {
@@ -35,13 +36,13 @@ class LandingPage extends React.Component {
       },
       {
         name: "Game",
-        path: "dropdown",
+        path: "game",
         dropdown: true,
-        child: ["Game 1", "Game 2", "Game 3"],
+        child: ["EZ PLAY", "EZ JUETENG", "EZ SCRATCH", "EZ RIPA"],
       },
       {
         name: "Support",
-        path: "dropdown",
+        path: "support",
         dropdown: true,
         child: ["Support 1", "Support 2", "Support 3"],
       },
@@ -63,7 +64,8 @@ class LandingPage extends React.Component {
         <LandingHeader />
         <LandingNews />
         <LandingCharacters />
-        {/* <Footer /> */}
+        <LandingModes />
+        <Footer />
       </>
     );
   }

@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 .flyout {
   display: flex;
   flex-direction: column;
@@ -5,9 +9,21 @@
   justify-content: space-between;
 }
 
+.custom-footer {
+  background-image: url(./assets/image/landing/footer/rat.jpg);
+  height: 60vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+}
+
 @font-face {
   font-family: "Header Title";
   src: url(./assets/font/angela.otf);
+}
+
+.display-2 {
+  font-family: Header Title;
 }
 
 .title-font {
@@ -58,6 +74,9 @@
   .flexible-height {
     height: fit-content;
   }
+  .display-2 {
+    font-size: 7.5vw;
+  }
 }
 
 @media (max-width: 550px) {
@@ -75,6 +94,9 @@
   }
   .flexible-height {
     height: fit-content;
+  }
+  .display-2 {
+    font-size: 12.5vw;
   }
 }
 

@@ -4,7 +4,11 @@ import "./index.css";
 
 const LandingCharacters = () => {
   return (
-    <MDBContainer fluid className="flexible-height landing-character-bg">
+    <MDBContainer
+      id="characters"
+      fluid
+      className="flexible-height landing-character-bg"
+    >
       <Title text="Characters" />
     </MDBContainer>
   );

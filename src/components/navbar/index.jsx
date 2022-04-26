@@ -13,6 +13,7 @@ import {
   MDBDropdownMenu,
   MDBDropdownItem,
   MDBIcon,
+  MDBBtn,
 } from "mdbreact";
 
 class NavigationBar extends Component {
@@ -65,6 +66,7 @@ class NavigationBar extends Component {
                   {link.dropdown ? (
                     <MDBDropdown size="sm">
                       <MDBDropdownToggle
+                        href={`#${link.path}`}
                         color="transparent"
                         className="z-depth-0 px-2 m-0"
                         style={{ fontSize: "15px" }}
@@ -81,13 +83,16 @@ class NavigationBar extends Component {
                       </MDBDropdownMenu>
                     </MDBDropdown>
                   ) : (
-                    <MDBLink
-                      to={`#${link.path}`}
+                    <MDBBtn
+                      size="sm"
+                      color="transparent"
+                      className="z-depth-0 px-2 m-0"
+                      href={`#${link.path}`}
                       onClick={this.closeCollapse("mainNavbarCollapse")}
                       style={{ fontSize: "15px" }}
                     >
                       <strong>{link.name}</strong>
-                    </MDBLink>
+                    </MDBBtn>
                   )}
                 </MDBNavItem>
               ))}

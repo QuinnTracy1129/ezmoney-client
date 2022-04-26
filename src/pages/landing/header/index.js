@@ -36,10 +36,14 @@ const LandingHeader = () => {
       <MDBContainer fluid className="header-dots text-center">
         <MDBRow>
           <MDBCol size="6" className="text-right">
-            <img src={Google} className="header-dl" alt="Google Play" />
+            <MDBBtn className="z-depth-0 p-0" color="transparent">
+              <img src={Google} className="header-dl" alt="Google Play" />
+            </MDBBtn>
           </MDBCol>
           <MDBCol size="6" className="text-left">
-            <img src={Apk} className="header-dl" alt="Application" />
+            <MDBBtn className="z-depth-0 p-0" color="transparent">
+              <img src={Apk} className="header-dl" alt="Application" />
+            </MDBBtn>
           </MDBCol>
           <MDBCol size="12" className="mt-2">
             <MDBBtnGroup>
