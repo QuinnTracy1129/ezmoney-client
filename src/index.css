@@ -40,15 +40,36 @@ html {
   transition: all 1s;
 }
 
+@media (min-height: 701px) {
+  .character-active-slide {
+    height: auto;
+    width: 80%;
+  }
+}
+
+@media (max-height: 700px) {
+  .character-active-slide {
+    height: 90%;
+    width: auto;
+  }
+}
+
 @media (min-width: 1200px) {
+  .highligh-body {
+    padding-bottom: 5%;
+  }
+  .news-card {
+    height: 65vh;
+    overflow: auto;
+  }
   .gamemode-active {
     font-size: 60px;
   }
   .gamemode-card {
     height: 65vh;
   }
-  .bigW-15 {
-    width: 15%;
+  .bigW-50 {
+    width: 50%;
   }
   .bigW-90 {
     width: 90%;
@@ -72,7 +93,7 @@ html {
     font-size: 40px;
   }
   .gamemode-card {
-    height: 25vh;
+    height: 45vh;
   }
   .sm-none {
     display: none;
@@ -102,7 +123,7 @@ html {
     font-size: 30px;
   }
   .gamemode-card {
-    height: 20vh;
+    height: 35vh;
   }
   .sm-none {
     display: none;

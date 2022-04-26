@@ -37,7 +37,7 @@ const LandingCharacters = () => {
       className="flexible-height landing-character-bg"
     >
       <Title text="Characters" />
-      <MDBRow style={{ height: "75vh" }} className="bg-danger text-white pb-3">
+      <MDBRow style={{ height: "75vh" }} className="text-white pb-3">
         <MDBCol
           className={
             Characters[activeIndex - 2]
@@ -86,12 +86,34 @@ const LandingCharacters = () => {
             </MDBView>
           )}
         </MDBCol>
-        <MDBCol size="4" className="text-center">
+        <MDBCol
+          size="4"
+          className="d-flex align-items-center h-100 position-relative"
+        >
           <img
             src={Characters[activeIndex].image}
-            className="img-fluid character-preview mx-auto"
+            className="character-preview mx-auto character-active-slide"
             alt="Active slide"
           />
+          <MDBContainer fluid className="carousel-button">
+            <MDBBtn
+              onClick={() => handlePagination(true)}
+              color="light"
+              className="rounded-pill px-3 sm-none"
+            >
+              <MDBIcon icon="angle-double-left" />
+            </MDBBtn>
+            <MDBBtn color="light" className="rounded-pill bigW-50 py-3">
+              {Characters[activeIndex].label}
+            </MDBBtn>
+            <MDBBtn
+              onClick={() => handlePagination(false)}
+              color="light"
+              className="rounded-pill px-3 sm-none"
+            >
+              <MDBIcon icon="angle-double-right" />
+            </MDBBtn>
+          </MDBContainer>
         </MDBCol>
         {Characters[activeIndex + 1] && (
           <MDBCol className="d-flex align-items-center" size="2">
@@ -123,25 +145,6 @@ const LandingCharacters = () => {
             </MDBView>
           </MDBCol>
         )}
-        <MDBCol size="12" className="text-center mt-3">
-          <MDBBtn
-            onClick={() => handlePagination(true)}
-            color="light"
-            className="rounded-pill px-3 sm-none"
-          >
-            <MDBIcon icon="angle-double-left" />
-          </MDBBtn>
-          <MDBBtn color="light" className="rounded-pill bigW-15 py-3">
-            {Characters[activeIndex].label}
-          </MDBBtn>
-          <MDBBtn
-            onClick={() => handlePagination(false)}
-            color="light"
-            className="rounded-pill px-3 sm-none"
-          >
-            <MDBIcon icon="angle-double-right" />
-          </MDBBtn>
-        </MDBCol>
       </MDBRow>
     </MDBContainer>
   );

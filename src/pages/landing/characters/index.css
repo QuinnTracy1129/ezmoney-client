@@ -8,3 +8,10 @@
 .character-preview {
   border-radius: 10% 0 10% 0;
 }
+
+.carousel-button {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+}
