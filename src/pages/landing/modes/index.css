@@ -1,6 +1,6 @@
 .gamemode-card {
   background-repeat: no-repeat;
-  background-position: right;
+  background-position: right bottom;
   background-size: cover;
   position: relative;
   overflow: hidden;

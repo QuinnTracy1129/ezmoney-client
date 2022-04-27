@@ -28,13 +28,12 @@ const GamemodeCard = ({
       size={didClick ? (activeIndex === index ? "9" : "1") : "3"}
     >
       {didClick ? (
-        activeIndex === index ? (
-          <MDBContainer fluid className="d-flex align-items-center h-100 px-0">
-            <MDBContainer fluid className="gamemode-active">
-              EZ {labels[index]}
-            </MDBContainer>
-          </MDBContainer>
-        ) : (
+        activeIndex === index ? null : (
+          // <MDBContainer fluid className="d-flex align-items-center h-100 px-0">
+          //   <MDBContainer fluid className="gamemode-active">
+          //     EZ {labels[index]}
+          //   </MDBContainer>
+          // </MDBContainer>
           <>
             {overlay && <MDBContainer className="box-overlay" />}
             <MDBContainer

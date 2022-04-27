@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { MDBContainer, MDBRow } from "mdbreact";
 import Title from "../../../components/title";
-import Header from "../../../fakeDb/header";
+import Modes from "../../../fakeDb/modes";
 import GamemodeCard from "./card";
 import "./index.css";
 
@@ -13,7 +13,7 @@ const LandingModes = () => {
     <MDBContainer id="game" fluid className="flexible-height">
       <Title text="Game Modes" />
       <MDBRow className="pb-5">
-        {Header.map((item, index) => (
+        {Modes.map((item, index) => (
           <GamemodeCard
             didClick={didClick}
             setDidClick={setDidClick}
